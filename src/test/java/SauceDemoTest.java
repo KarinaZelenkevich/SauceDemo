@@ -26,14 +26,11 @@ public class SauceDemoTest extends BaseTest {
         itemPrice = "$\n$29.99";
         driver.findElement(By.xpath(addToCartButton)).click();
         driver.findElement(By.cssSelector(shoppingCartLogo)).click();
-
         boolean isDisplayed = driver.findElement(By.xpath("//span[contains(text(), 'Your Cart')]")).isDisplayed();
         Assert.assertTrue(isDisplayed, "Не перешли на страницу корзины");
-
         driver.findElement(By.xpath(itemInTheShoppingCart)).getText();
         driver.findElement(By.cssSelector(itemPriceInTheShoppingCart)).getText();
         itemPriceInTheShoppingCart = "$\n$29.99";
-
         Assert.assertEquals(itemPrice, itemPriceInTheShoppingCart);
 
 

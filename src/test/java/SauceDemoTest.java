@@ -14,6 +14,7 @@ public class SauceDemoTest extends BaseTest {
         String itemInTheShoppingCart = "//*[@id='item_4_title_link']/div";
         String itemPriceInTheShoppingCart = ".item_pricebar";
 
+
     @Test
     public void sauceDemo() {
 
@@ -22,7 +23,7 @@ public class SauceDemoTest extends BaseTest {
         driver.findElement(By.xpath(passwordByXpath)).sendKeys("secret_sauce");
         driver.findElement(By.name(loginButton)).click();
         driver.findElement(By.xpath(itemByContainsText)).getText();
-        driver.findElement(By.xpath(itemPrice)).getText();
+        String itemPriceValue = driver.findElement(By.xpath(itemPrice)).getText();
         itemPrice = "$\n$29.99";
         driver.findElement(By.xpath(addToCartButton)).click();
         driver.findElement(By.cssSelector(shoppingCartLogo)).click();
@@ -31,10 +32,10 @@ public class SauceDemoTest extends BaseTest {
         Assert.assertTrue(isDisplayed, "Не перешли на страницу корзины");
 
         driver.findElement(By.xpath(itemInTheShoppingCart)).getText();
-        driver.findElement(By.cssSelector(itemPriceInTheShoppingCart)).getText();
+        String itemPriceValueInTheShoppingCart = driver.findElement(By.cssSelector(itemPriceInTheShoppingCart)).getText();
         itemPriceInTheShoppingCart = "$\n$29.99";
 
-        Assert.assertEquals(itemPrice, itemPriceInTheShoppingCart);
+        Assert.assertEquals(itemPriceValue, itemPriceValueInTheShoppingCart);
 
 
     }

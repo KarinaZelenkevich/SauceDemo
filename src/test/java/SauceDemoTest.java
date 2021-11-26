@@ -12,7 +12,7 @@ public class SauceDemoTest extends BaseTest {
         String addToCartButton = "//*[@id='add-to-cart-sauce-labs-backpack']";
         String shoppingCartLogo = ".shopping_cart_link";
         String itemInTheShoppingCart = "//*[@id='item_4_title_link']/div";
-        String itemPriceInTheShoppingCart = ".item_pricebar";
+        String itemPriceInTheShoppingCart = ".inventory_item_price";
 
 
     @Test

@@ -4,15 +4,15 @@ import org.testng.annotations.Test;
 
 public class SauceDemoTest extends BaseTest {
 
-    String userNameById = "user-name";
-    String passwordByXpath = "//*[@id='password']";
-    String loginButton = "login-button";
-    String itemByContainsText = "//div[contains(text(), 'Sauce Labs Backpack')]";
-    String itemPrice = "//div[div[a[@id='item_4_title_link']]]/div[@class='pricebar']/div";
-    String addToCartButton = "//*[@id='add-to-cart-sauce-labs-backpack']";
-    String shoppingCartLogo = ".shopping_cart_link";
-    String itemInTheShoppingCart = "//*[@id='item_4_title_link']/div";
-    String itemPriceInTheShoppingCart = ".inventory_item_price";
+        String userNameById = "user-name";
+        String passwordByXpath = "//*[@id='password']";
+        String loginButton = "login-button";
+        String itemByContainsText = "//div[contains(text(), 'Sauce Labs Backpack')]";
+        String itemPrice = "//div[div[a[@id='item_4_title_link']]]/div[@class='pricebar']/div";
+        String addToCartButton = "//*[@id='add-to-cart-sauce-labs-backpack']";
+        String shoppingCartLogo = ".shopping_cart_link";
+        String itemInTheShoppingCart = "//*[@id='item_4_title_link']/div";
+        String itemPriceInTheShoppingCart = ".inventory_item_price";
 
 
     @Test

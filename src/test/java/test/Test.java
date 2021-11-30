@@ -1,5 +1,8 @@
+package test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import test.BaseTest;
 
 public class Test extends BaseTest {
 

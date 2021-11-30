@@ -14,43 +14,45 @@ public class LoginPageTest extends BaseTest {
     }
 
 
-        @Test
-        public void userNameShouldBeRequired () {
-            loginPage.open();
-            loginPage.login("", "secret_sauce");
-            Assert.assertEquals(loginPage.getErrorMessage(),
-                    "Epic sadface: Username is required",
-                    "Сообщение об ошибке не верно");
+    @Test
+    public void userNameShouldBeRequired() {
+        loginPage.open();
+        loginPage.login("", "secret_sauce");
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Username is required",
+                "Сообщение об ошибке не верно");
 
-        }
-        @Test
-        public void passwordShouldBeRequired () {
-            loginPage.open();
-            loginPage.login("standard_user", "");
-            Assert.assertEquals(loginPage.getErrorMessage(),
-                    "Epic sadface: Password is required",
-                    "Сообщение об ошибке не верно");
+    }
 
-        }
-        @Test
-        public void userDataShouldBeCorrect () {
-            loginPage.open();
-            loginPage.login("adasda", "adad");
-            Assert.assertEquals(loginPage.getErrorMessage(),
-                    "Epic sadface: Username and password do not match any user in this service",
-                    "Сообщение об ошибке не верно");
+    @Test
+    public void passwordShouldBeRequired() {
+        loginPage.open();
+        loginPage.login("standard_user", "");
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Password is required",
+                "Сообщение об ошибке не верно");
 
-        }
-        @Test
-        public void lockedUser () {
-            loginPage.open();
-            loginPage.login("locked_out_user", "secret_sauce");
-            Assert.assertEquals(loginPage.getErrorMessage(),
-                    "Epic sadface: Sorry, this user has been locked out.",
-                    "Сообщение об ошибке не верно");
+    }
 
-        }
+    @Test
+    public void userDataShouldBeCorrect() {
+        loginPage.open();
+        loginPage.login("adasda", "adad");
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Username and password do not match any user in this service",
+                "Сообщение об ошибке не верно");
 
+    }
+
+    @Test
+    public void lockedUser() {
+        loginPage.open();
+        loginPage.login("locked_out_user", "secret_sauce");
+        Assert.assertEquals(loginPage.getErrorMessage(),
+                "Epic sadface: Sorry, this user has been locked out.",
+                "Сообщение об ошибке не верно");
+
+    }
 
 
     String userNameById = "user-name";

@@ -2,12 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class CartPage extends BasePage {
     public static final String PRODUCT_IN_THE_CART = ".inventory_item_name";
     public static final String PRODUCT_PRICE_IN_THE_CART = ".inventory_item_price";
-    public static final By REMOVE_BUTTON_IN_THE_CART = (By.id("remove-sauce-labs-onesie"));
+    public static final By CHECKOUT_BUTTON = (By.cssSelector(".btn.btn_action.btn_medium.checkout_button"));
 
 
     public CartPage(WebDriver driver) {
@@ -26,8 +25,7 @@ public class CartPage extends BasePage {
         return driver.findElement(By.xpath(String.format(PRODUCT_PRICE_IN_THE_CART, nameProduct))).getText();
     }
 
-    public void removeButtonInTheCart() {
-        driver.findElement(REMOVE_BUTTON_IN_THE_CART).click();
-
+    public void checkoutButtonClick() {
+        driver.findElement(CHECKOUT_BUTTON).click();
     }
 }

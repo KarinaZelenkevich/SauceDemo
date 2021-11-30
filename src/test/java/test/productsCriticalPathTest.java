@@ -8,7 +8,6 @@ public class productsCriticalPathTest extends BaseTest {
     public void productShouldBeAddedIntoCart() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-
         inventoryPage.getPriceByName("Sauce Labs Onesie");
         inventoryPage.addToCart("Sauce Labs Onesie");
         cartPage.open();
@@ -17,14 +16,15 @@ public class productsCriticalPathTest extends BaseTest {
     }
 
     @Test
-    public void removeButtonClick() {
+    public void fieldsForUserDataToContinueShopping() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
-
         inventoryPage.getPriceByName("Sauce Labs Onesie");
         inventoryPage.addToCart("Sauce Labs Onesie");
         cartPage.open();
-        cartPage.removeButtonInTheCart();
+        cartPage.checkoutButtonClick();
+        Assert.assertTrue(checkoutStepOnePage.fieldsForUserData(), "Не был произведен переход на страницу чекаута");
+
 
     }
 

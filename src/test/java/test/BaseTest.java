@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.CartPage;
+import pages.CheckoutStepOnePage;
 import pages.InventoryPage;
 import pages.LoginPage;
 
@@ -17,6 +18,7 @@ public class BaseTest {
     LoginPage loginPage;
     InventoryPage inventoryPage;
     CartPage cartPage;
+    CheckoutStepOnePage checkoutStepOnePage;
 
     @BeforeMethod
     public void setUp() {
@@ -28,6 +30,8 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
+        checkoutStepOnePage = new CheckoutStepOnePage(driver);
+
 
     }
 

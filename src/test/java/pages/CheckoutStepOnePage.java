@@ -17,7 +17,6 @@ public class CheckoutStepOnePage extends BasePage {
         driver.findElement(LASTNAME_INPUT).sendKeys(lastName);
         driver.findElement(ZIP_CODE_INPUT).sendKeys(zipCode);
         driver.findElement(CONTINUE_BUTTON).click();
-
     }
 
     public String getCheckoutErrorMessage() {

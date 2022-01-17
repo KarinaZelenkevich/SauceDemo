@@ -28,7 +28,7 @@ public class CheckoutStepOnePage extends BasePage {
         super(driver);
     }
 
-    public boolean fieldsForUserData() {
+    public boolean checkOutStepOneIsDisplayed() {
         return driver.findElement(By.xpath(String.format(CHECKOUT_STEP_ONE))).isDisplayed();
     }
 }

@@ -18,11 +18,11 @@ public class CartPage extends BasePage {
     }
 
     public void itemInTheCart(String nameProduct) {
-        driver.findElement(By.xpath(String.format(PRODUCT_IN_THE_CART, nameProduct)));
+        driver.findElement(By.cssSelector(String.format(PRODUCT_IN_THE_CART, nameProduct)));
     }
 
     public String getProductPriceFromTheShoppingCart(String nameProduct) {
-        return driver.findElement(By.xpath(String.format(PRODUCT_PRICE_IN_THE_CART, nameProduct))).getText();
+        return driver.findElement(By.cssSelector(String.format(PRODUCT_PRICE_IN_THE_CART, nameProduct))).getText();
     }
 
     public void checkoutButtonClick() {

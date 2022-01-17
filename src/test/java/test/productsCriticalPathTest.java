@@ -20,7 +20,6 @@ public class productsCriticalPathTest extends BaseTest {
                 cartPage.getProductPriceFromTheShoppingCart("Sauce Labs Onesie"),
                 priceFromInventoryPage,"Цены не равны");
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
     }
 
     @Test
@@ -31,7 +30,7 @@ public class productsCriticalPathTest extends BaseTest {
         inventoryPage.addToCart("Sauce Labs Onesie");
         cartPage.open();
         cartPage.checkoutButtonClick();
-        Assert.assertTrue(checkoutStepOnePage.fieldsForUserData(), "Не был произведен переход на страницу чекаута");
+        Assert.assertTrue(checkoutStepOnePage.checkOutStepOneIsDisplayed(), "Не был произведен переход на страницу чекаута");
 
     }
 
